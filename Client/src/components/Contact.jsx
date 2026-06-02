@@ -20,7 +20,7 @@ function Contact() {
 
   try {
 
-    const response = await fetch("http://localhost:5000/api/contact", {
+    const response = await fetch("https://maniportfolio-r44t.onrender.com/api/Contact", {
 
       method: "POST",
 
