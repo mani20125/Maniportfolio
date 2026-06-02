@@ -2,14 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config({ path: "./.env" });
-const contactroutes = require("./routes/contactroutes");
+const contactRoutes = require("./routes/contactRoutes");
 console.log(process.env.MONGO_URI);
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use("/api/contact", contactroutes);
+app.use("/api/contact", contactRoutes);
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
