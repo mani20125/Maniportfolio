@@ -32,9 +32,15 @@ function Navbar() {
                 </div>
 
                 {/* Resume Button */}
+                <a
+                    href="/Manikanta-resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                 <button className="bg-purple-600 hover:bg-purple-700 transition px-5 py-2 rounded-full text-white font-medium">
                     Resume
                 </button>
+                </a>
 
             </div>
 
