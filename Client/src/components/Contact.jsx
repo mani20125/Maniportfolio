@@ -5,6 +5,9 @@ function Contact() {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
 
@@ -16,39 +19,46 @@ function Contact() {
   };
   const handleSubmit = async (e) => {
 
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
+    try {
 
-    const response = await fetch("https://maniportfolio-r44t.onrender.com/api/Contact", {
+      setLoading(true);
+      setSuccess("");
+      setError("");
 
-      method: "POST",
+      const response = await fetch(
+        "https://maniportfolio-r44t.onrender.com/api/Contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-      headers: {
-        "Content-Type": "application/json",
-      },
+      const data = await response.json();
 
-      body: JSON.stringify(formData),
+      setSuccess(data.message);
 
-    });
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
 
-    const data = await response.json();
+    } catch (error) {
 
-    alert(data.message);
+      setError("Something went wrong");
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    } finally {
 
-  } catch (error) {
+      setLoading(false);
 
-    alert("Something went wrong");
+    }
 
-  }
-
-};
+  };
 
   return (
 
@@ -114,10 +124,24 @@ function Contact() {
           {/* Button */}
 
           <button
-            className="bg-purple-600 hover:bg-purple-700 transition px-8 py-4 rounded-2xl w-fit"
+            type="submit"
+            disabled={loading}
+            className="bg-purple-600 hover:bg-purple-700 transition px-8 py-4 rounded-2xl w-fit disabled:opacity-50"
           >
-            Send Message
+            {loading ? "Sending..." : "Send Message"}
           </button>
+          
+          {success && (
+            <p className="text-green-500 mt-4">
+              {success}
+            </p>
+          )}
+
+          {error && (
+            <p className="text-red-500 mt-4">
+              {error}
+            </p>
+          )}
 
         </form>
 
