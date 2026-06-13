@@ -33,7 +33,7 @@ function Navbar() {
 
                 {/* Resume Button */}
                 <a
-                    href="/Manikanta-resume.pdf"
+                    href="/Manikanta@Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
