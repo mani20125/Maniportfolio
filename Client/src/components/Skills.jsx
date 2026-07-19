@@ -1,3 +1,6 @@
+import BorderGlow from "./BorderGlow";
+import GradientText from "./GradientText";
+import ShinyText from "./ShinyText";
 import {
     FaHtml5,
     FaCss3Alt,
@@ -43,13 +46,22 @@ function Skills() {
 
                 <div className="text-center mb-16">
 
-                    <p className="text-purple-400 font-semibold mb-4">
+                    <GradientText
+                        colors={["#a855f7", "#c084fc", "#ffffff", "#a855f7"]}
+                        animationSpeed={4}
+                        showBorder={false}
+                        className="font-semibold mb-4 text-lg"
+                    >
                         SKILLS
-                    </p>
+                    </GradientText>
 
-                    <h2 className="text-4xl md:text-5xl font-bold">
-                        Technologies I Work With
-                    </h2>
+                    <ShinyText
+                        text="Technologies I Work With"
+                        className="font-bold text-4xl md:text-5xl"
+                        color="#a855f7"
+                        shineColor="#ffffff"
+                        speed={3.5}
+                    />
 
                 </div>
 
@@ -59,20 +71,26 @@ function Skills() {
 
                     {skills.map((skill, index) => (
 
-                        <div
+                        <BorderGlow
                             key={index}
-                            className="bg-[#111827] border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center hover:border-purple-500 hover:-translate-y-2 transition duration-300"
+                            className="group rounded-3xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] hover:shadow-[0_15px_35px_rgba(168,85,247,0.25)]"
+                            glowRadius={20}
+                            glowIntensity={2.5}
                         >
 
-                            <div className="text-5xl text-purple-400 mb-4">
-                                {skill.icon}
+                            <div className="bg-[#111827] rounded-3xl p-8 flex flex-col items-center justify-center h-52">
+
+                                <div className="text-5xl text-purple-400 mb-4 transition-transform duration-300 group-hover:scale-110">
+                                    {skill.icon}
+                                </div>
+
+                                <h3 className="text-lg font-semibold">
+                                    {skill.name}
+                                </h3>
+
                             </div>
 
-                            <h3 className="text-lg font-semibold">
-                                {skill.name}
-                            </h3>
-
-                        </div>
+                        </BorderGlow>
 
                     ))}
 
@@ -80,7 +98,7 @@ function Skills() {
 
             </div>
 
-        </section>
+        </section >
 
     )
 }

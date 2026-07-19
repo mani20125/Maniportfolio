@@ -1,4 +1,7 @@
 import { useState } from "react";
+import GradientText from "./GradientText";
+import ShinyText from "./ShinyText";
+import Galaxy from "./Galaxy";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -62,21 +65,38 @@ function Contact() {
 
   return (
 
-    <section id="contact" className="w-full py-24 px-6 bg-[#0B0F19]">
+    <section
+      id="contact"
+      className="relative min-h-screen flex items-center py-24 px-6 overflow-hidden"
+    >
+      <div className="absolute inset-0 z-0">
+        <Galaxy />
+      </div>
+      <div className="absolute inset-0 bg-transparent z-[1]" />
 
-      <div className="max-w-5xl mx-auto">
+      <div className="relative z-10 max-w-5xl mx-auto ">
 
         {/* Heading */}
 
         <div className="text-center mb-16">
 
-          <p className="text-purple-400 font-semibold mb-4">
+          <GradientText
+            colors={["#a855f7", "#c084fc", "#ffffff", "#a855f7"]}
+            animationSpeed={4}
+            showBorder={false}
+            className="font-semibold mb-4 text-lg"
+          >
             CONTACT
-          </p>
+          </GradientText>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let’s Work Together
-          </h2>
+          <ShinyText
+            text="Let’s Work Together"
+            className="font-bold mb-6 text-4xl md:text-5xl"
+            color="#a855f7"
+            shineColor="#ffffff"
+            speed={3.5}
+          />
+
 
           <p className="text-gray-400 text-lg">
             Have a project idea or opportunity? Feel free to contact me.
@@ -130,7 +150,7 @@ function Contact() {
           >
             {loading ? "Sending..." : "Send Message"}
           </button>
-          
+
           {success && (
             <p className="text-green-500 mt-4">
               {success}

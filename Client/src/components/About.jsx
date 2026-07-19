@@ -1,3 +1,5 @@
+import GradientText from "./GradientText";
+import ShinyText from "./ShinyText";
 function About() {
     return (
 
@@ -20,14 +22,29 @@ function About() {
 
                 <div>
 
-                    <p className="text-purple-400 font-semibold mb-4">
+                    <GradientText
+                        colors={["#a855f7", "#c084fc", "#ffffff", "#a855f7"]}
+                        animationSpeed={4}
+                        showBorder={false}
+                        className="font-semibold mb-4 text-lg"
+                    >
                         ABOUT ME
-                    </p>
+                    </GradientText>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        Passionate About Building
-                        Modern Web Experiences
-                    </h2>
+                    <div className="mb-6">
+                        <ShinyText
+                            text="Passionate About Building"
+                            speed={5}
+                            className="block text-4xl md:text-5xl font-bold text-purple-400"
+                        />
+
+                        <ShinyText
+                            text="Modern Web Experiences"
+                            speed={5}
+                            className="block text-4xl md:text-5xl font-bold text-purple-400"
+                        />
+                    </div>
+
 
                     <p className="text-gray-400 leading-8 text-lg mb-6">
                         I'm a B.Tech student passionate about full stack development,

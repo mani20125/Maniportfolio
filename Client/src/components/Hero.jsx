@@ -1,27 +1,77 @@
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { degrees, motion } from "framer-motion";
+import ShinyText from "./ShinyText";
+import SplitText from "./SplitText";
+import ColorBends from "./ColorBends";
+import TextType from "./TextType";
 function Hero() {
     return (
 
-        <section id="hero" className="min-h-screen flex items-center justify-center px-6">
-
-            <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
-
+        <section
+            id="hero"
+            className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden"
+        >
+            <div className="absolute inset-0 z-0">
+                <ColorBends
+                    colors={[
+                        "#4c1d95",
+                        "#6d28d9",
+                        "#7c3aed",
+                        "#9333ea",
+                        "#c084fc",
+                    ]}
+                    speed={0.25}
+                    frequency={1}
+                    noise={0.08}
+                    iterations={1}
+                    intensity={1.3}
+                    bandWidth={6}
+                    mouseInfluence={1.2}
+                    rotation={90}
+                />
+            </div>
+            <div className="relative z-10 max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
                 {/* Left Side */}
                 <div>
 
-                    <p className="text-purple-400 font-medium mb-4">
-                        Full Stack Developer
-                    </p>
+                    <ShinyText
+                        text="Full Stack Developer"
+                        className="font-medium mb-4 text-base md:text-5xl"
+                        color="#a855f7"
+                        shineColor="#ffffff"
+                        speed={3.5}
+                    />
 
-                    <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                        Hi, I'm <span className="text-purple-500">Manikanta</span>
+                    <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 flex items-center flex-wrap">
+                        <span>Hi, I'm&nbsp;</span>
+
+                        <SplitText
+                            text="Manikanta"
+                            className="text-purple-500"
+                            delay={75}
+                            duration={1}
+                            splitType="chars"
+                            from={{ opacity: 0, y: 60 }}
+                            to={{ opacity: 1, y: 0 }}
+                            textAlign="left"
+                            tag="span"
+                        />
                     </h1>
 
-                    <p className="text-gray-400 text-lg leading-8 max-w-xl mb-8">
-                        I build modern full stack web applications
-                        with clean UI and scalable backend architecture.
-                    </p>
+                    <TextType
+                        text={[
+                            "I build modern full stack web applications.",
+                            "I create responsive and interactive user interfaces.",
+                            "I develop scalable backend APIs.",
+                            "I love turning ideas into real-world products."
+                        ]}
+                        typingSpeed={60}
+                        deletingSpeed={35}
+                        pauseDuration={1800}
+                        showCursor={true}
+                        cursorCharacter="|"
+                        className="text-white text-2xl leading-8 max-w-xl mb-8"
+                    />
 
                     <div className="flex gap-4">
 
