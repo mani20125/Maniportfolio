@@ -116,7 +116,7 @@ function Hero() {
                     <div className="absolute w-[300px] h-[500px] bg-purple-600/30 blur-3xl rounded-full"></div>
 
                     <img
-                        src="/mani2.png"
+                        src="/mani2.webp"
                         alt="Mani"
                         className="w-[280px] md:w-[380px] h-[400px] md:h-[500px] object-cover rounded-3xl border border-white/10 shadow-3xl relative z-10"
                     />

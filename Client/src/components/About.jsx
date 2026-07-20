@@ -12,7 +12,7 @@ function About() {
                 <div className="flex justify-center">
                     <div className="absolute w-[300px] h-[500px] bg-purple-600/30 blur-3xl rounded-full"></div>
                     <img
-                        src="/manigpt.png"
+                        src="/manigpt.webp"
                         alt="Mani"
                         className="w-[280px] md:w-[380px] h-[400px] md:h-[500px] object-cover rounded-3xl border border-white/10 shadow-3xl relative z-10"
                     />

@@ -12,7 +12,7 @@ function Projects() {
 
       tech: ["Python", "YOLOv8", "OpenCV", "Machine Learning"],
 
-      image: "/yolov8.png",
+      image: "/yolov8.webp",
 
       github: "https://github.com/mani20125/YoloV8-object-detection.git",
     },
@@ -25,7 +25,7 @@ function Projects() {
 
       tech: ["Python", "Django", "MySQL"],
 
-      image: "/securetrack.png",
+      image: "/securetrack.webp",
 
       github: "https://github.com/mani20125/SECURETRACK.git",
     },
@@ -51,7 +51,7 @@ function Projects() {
 
       tech: ["React", "Tailwind CSS", "JavaScript"],
 
-      image: "/portfolio.png",
+      image: "/portfolio.webp",
 
       github: "#",
     },
