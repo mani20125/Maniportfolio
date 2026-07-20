@@ -9,18 +9,18 @@ function About() {
 
                 {/* Left Side */}
 
-                <div className="flex justify-center">
-                    <div className="absolute w-[300px] h-[500px] bg-purple-600/30 blur-3xl rounded-full"></div>
+                <div className="relative flex justify-center order-2 md:order-1 mt-10 md:mt-0">
+                    <div className="absolute inset-4 bg-purple-600/20 blur-xl rounded-3xl"></div>
                     <img
                         src="/manigpt.webp"
                         alt="Mani"
-                        className="w-[280px] md:w-[380px] h-[400px] md:h-[500px] object-cover rounded-3xl border border-white/10 shadow-3xl relative z-10"
+                        className="w-56 sm:w-64 md:w-[380px] h-72 sm:h-80 md:h-[500px] object-cover rounded-3xl border border-white/10 shadow-3xl relative z-10"
                     />
                 </div>
 
                 {/* Right Side */}
 
-                <div>
+                <div className="order-1 md:order-2">
 
                     <GradientText
                         colors={["#a855f7", "#c084fc", "#ffffff", "#a855f7"]}

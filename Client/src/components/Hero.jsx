@@ -9,7 +9,7 @@ function Hero() {
 
         <section
             id="hero"
-            className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden"
+            className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center px-6 overflow-hidden"
         >
             <div className="absolute inset-0 z-0">
                 <ColorBends
@@ -30,7 +30,7 @@ function Hero() {
                     rotation={90}
                 />
             </div>
-            <div className="relative z-10 max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative z-10 max-w-7xl w-full grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 {/* Left Side */}
                 <div>
 
@@ -118,7 +118,7 @@ function Hero() {
                     <img
                         src="/mani2.webp"
                         alt="Mani"
-                        className="w-[280px] md:w-[380px] h-[400px] md:h-[500px] object-cover rounded-3xl border border-white/10 shadow-3xl relative z-10"
+                        className="w-56 sm:w-64 md:w-[380px] h-72 sm:h-80 md:h-[500px] object-cover rounded-3xl border border-white/10 shadow-3xl relative z-10"
                     />
 
                 </div>

@@ -89,7 +89,7 @@ function Projects() {
 
         {/* Grid */}
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
 
           {projects.map((project, index) => (
 
@@ -105,32 +105,33 @@ function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-[320px] object-cover rounded-2xl transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                  className="w-full aspect-video md:h-[320px] object-cover object-top rounded-2xl transition-transform duration-500 hover:scale-105"
                 />
               </div>
 
               {/* Content */}
 
-              < div className="p-6" >
+              <div className="p-5 md:p-6">
 
-                <h3 className="text-2xl font-bold mb-4">
+                <h3 className="text-xl md:text-2xl font-bold mb-3">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-400 leading-7 mb-6">
+                <p className="text-gray-400 text-sm md:text-base leading-6 md:leading-7 mb-5">
                   {project.description}
                 </p>
 
                 {/* Tech Stack */}
 
-                <div div className="flex flex-wrap gap-3 mb-6" >
+                <div className="flex flex-wrap gap-2 md:gap-3 mb-5">
 
                   {
                     project.tech.map((item, i) => (
 
                       <span
                         key={i}
-                        className="px-4 py-2 rounded-full bg-purple-600/20 text-purple-300 text-sm"
+                        className="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-purple-600/20 text-purple-300 text-xs md:text-sm"
                       >
                         {item}
                       </span>
@@ -150,7 +151,7 @@ function Projects() {
                     rel="noopener noreferrer"
                   >
 
-                    <button className="bg-purple-600 hover:bg-purple-700 transition px-5 py-2 rounded-full">
+                    <button className="bg-purple-600 hover:bg-purple-700 transition px-4 md:px-5 py-2 rounded-full text-sm">
                       GitHub
                     </button>
 
